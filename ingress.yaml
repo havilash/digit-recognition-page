@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: digit-recognition-ingress
+spec:
+  rules:
+    - host: digit-recognition.local
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: flask-service
+                port:
+                  number: 80
