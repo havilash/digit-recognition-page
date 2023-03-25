@@ -6,26 +6,26 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flask-app
+      app: digit-recognition
   template:
     metadata:
       labels:
-        app: flask-app
+        app: digit-recognition
     spec:
       containers:
-      - name: flask-app
-        image: havilash/digit-recognition:latest
-        ports:
-        - containerPort: 5000
-
+        - name: digit-recognition
+          image: havilash/digit-recognition:latest
+          ports:
+            - containerPort: 5000
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: digit-recognition-service
 spec:
   selector:
-    app: flask-app
+    app: digit-recognition
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 5000
+    - protocol: TCP
+      port: 80
+      targetPort: 5000

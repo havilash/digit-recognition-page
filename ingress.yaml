@@ -11,6 +11,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: flask-service
+                name: digit-recognition-service
                 port:
                   number: 80
