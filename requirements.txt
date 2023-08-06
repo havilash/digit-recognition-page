@@ -1,4 +1,4 @@
+git+https://github.com/Havilash/Neural-Network.git@main#egg=neural_network
 flask
-tensorflow
 numpy
 pillow
